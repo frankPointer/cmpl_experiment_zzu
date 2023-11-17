@@ -1,0 +1,52 @@
+#include <stdio.h>
+// 定义结构体
+typedef struct {
+    char name[20];
+    int age;
+} Person;
+
+int main() {
+    int i;
+    double pi = 3.14;
+    static int counter = 0;
+    const float gravity = 9.8;
+    char grade = 'A';
+
+    Person person;
+    /*
+    读取结构体的各个变量值
+    */
+    printf("Enter your name: ");
+    scanf("%s", person.name);
+
+    printf("Enter your age: ");
+    scanf("%d", &person.age);
+
+    if (person.age >= 18) {
+        printf("You are an adult.\n");
+    } else {
+        printf("You are a minor.\n");
+    }
+
+    while (counter < person.age) {
+        printf("Happy Birthday!\n");
+        counter++;
+    }
+
+    do {
+        printf("This is a do-while loop.\n");
+    } while (counter < 5);
+
+    switch (grade) {
+        case 'A':
+            printf("Excellent!\n");
+            break;
+        case 'B':
+            printf("Good!\n");
+            break;
+        default:
+            printf("Keep working hard!\n");
+    }
+
+    return 0;
+}
