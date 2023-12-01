@@ -200,7 +200,6 @@ public class OPG {
         Character q;
         Character a;
         sentence = strPreprocess(sentence);
-
         processList.add(new String[]{stackToString(stack), sentence, "准备"});
         do {
             a = sentence.charAt(0);
@@ -243,8 +242,10 @@ public class OPG {
             }
         } while (a != '#');
         writeListToFile();
-        System.out.println("分析完成");
-        System.out.println("未发生错误");
+
+            System.out.println("分析完成");
+            System.out.println("未发生错误");
+
 
     }
 
