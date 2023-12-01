@@ -251,7 +251,7 @@ public class OPG {
     private String strPreprocess(String sentence) {
         sentence = sentence.replaceAll("[^()/+\\-*]", "i");
         sentence = sentence.replaceAll("i+", "i");
-        return sentence+"#";
+        return sentence + "#";
     }
 
     private boolean equals(String stringA, String stringB) {
