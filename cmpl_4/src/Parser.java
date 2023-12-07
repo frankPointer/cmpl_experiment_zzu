@@ -8,7 +8,6 @@ public class Parser {
     private static HashSet<Character> non_terminator = new HashSet<>();
 
     private static void input() {
-        String[] in;
         Scanner scanner = new Scanner(System.in);
         System.out.print("请输入文法的数目：");
         int n = scanner.nextInt();
@@ -17,7 +16,6 @@ public class Parser {
         for (int i = 1; i <= n; i++)
         {
             String line = scanner.nextLine();
-            in = line.split("->");
             //按行读入文法
             grammars[i] = new Grammar(line);
             //遍历所有文法
