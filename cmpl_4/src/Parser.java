@@ -164,15 +164,15 @@ public class Parser {
             System.out.print("\t");
         System.out.print("\n\t");
         for (char c : terminator)
-            System.out.print(String.format("%-4c\t", c));
+            System.out.printf("%-4c\t", c);
         for (char c : non_terminator)
-            System.out.print(String.format("%-4c\t", c));
+            System.out.printf("%-4c\t", c);
         for (int i = 0; i < n; i++) {
-            System.out.print(String.format("\n%d\t", i));
+            System.out.printf("\n%d\t", i);
             for (char c : terminator)
-                System.out.print(String.format("%-4s\t", actionTable[i].get(c)));
+                System.out.printf("%-4s\t", actionTable[i].get(c));
             for (char c : non_terminator)
-                System.out.print(String.format("%-4s\t", gotoTable[i].get(c)));
+                System.out.printf("%-4s\t", gotoTable[i].get(c));
         }
 
         //  分析输入串
@@ -194,7 +194,7 @@ public class Parser {
         System.out.println("步骤\t\t状态栈\t\t\t\t符号栈\t\t\t\t\t输入串\t\taction\t\tgoto");
         String action = actionTable[status].get(str.charAt(pos));
         while (!action.equals("acc")) {
-            System.out.print(String.format("%d\t\t%-16s\t%-16s\t%8s\t%8s\t\t", cnt++, statusStack, charStack, str.substring(pos), action));
+            System.out.printf("%d\t\t%-16s\t%-16s\t%8s\t%8s\t\t", cnt++, statusStack, charStack, str.substring(pos), action);
             char a = action.charAt(0);
             //移进
             if(a == 'S') {
@@ -220,10 +220,10 @@ public class Parser {
             action = actionTable[status].get(str.charAt(pos));
             System.out.println();
             if (action == null) {
-                System.out.print(String.format("%d\t\t%-16s\t%-16s\t%8s\t%8s\t\t", cnt, statusStack, charStack, str.substring(pos), "err"));
+                System.out.printf("%d\t\t%-16s\t%-16s\t%8s\t%8s\t\t", cnt, statusStack, charStack, str.substring(pos), "err");
                 return;
             }
         }
-        System.out.print(String.format("%d\t\t%-16s\t%-16s\t%8s\t%8s\t\t", cnt, statusStack, charStack, str.substring(pos), action));
+        System.out.printf("%d\t\t%-16s\t%-16s\t%8s\t%8s\t\t", cnt, statusStack, charStack, str.substring(pos), action);
     }
 }
